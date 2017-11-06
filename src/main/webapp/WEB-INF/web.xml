@@ -1,0 +1,32 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+   
+    <servlet>
+    	<servlet-name>EchatsServlet</servlet-name>
+    	<display-name>EchatsServlet</display-name>
+    	<description></description>
+    	<servlet-class>com.qdu.echarts.servelet.EchatsServlet</servlet-class>
+    	<load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet>
+    	<servlet-name>EchatsServlet2</servlet-name>
+    	<display-name>EchatsServlet2</display-name>
+    	<description></description>
+    	<servlet-class>com.qdu.echarts.servelet.EchatsServlet2</servlet-class>
+    	<load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EchatsServlet</servlet-name>
+        <url-pattern>/EchatsServlet</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>EchatsServlet2</servlet-name>
+        <url-pattern>/EchatsServlet2</url-pattern>
+    </servlet-mapping>
+ 
+</web-app>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- jquery cdn引入 -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- echarts 引入 -->
+    <script src="echarts.js"></script>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<div id="main" style="width:500px;height:500px;"></div>
+
+<script>
+    var myChart=echarts.init(document.getElementById('main'));
+    //init初始化接口，返回ECharts实例，其中dom为图表所在节点
+       
+    var option = {
+        //标题
+        title : {
+            text: '主标题',
+            subtext: '副标题',
+            x:'center',
+        },
+
+
+        //提示框，鼠标悬浮交互时的信息提示
+        tooltip : {
+            show: true,//默认值true，可选为：true（显示） | false（隐藏）
+            zlevel: 1,//默认值1，一级层叠控制。每一个不同的zlevel将产生一个独立的canvas，相同zlevel的组件或图标将在同一个canvas上渲染。zlevel越高越靠顶层，canvas对象增多会消耗更多的内存和性能，并不建议设置过多的zlevel，大部分情况可以通过二级层叠控制z实现层叠控制。
+            z: 8,//默认值8，二级层叠控制，同一个canvas（相同zlevel）上z越高约靠顶层。
+            showContent: true,//默认值true，tooltip主体内容显示策略，只需tooltip触发事件或显示axisPointer而不需要显示内容时可配置该项为false，
+            trigger: 'item',//默认值'item'，触发类型，默认数据触发，见下图，可选为：'item' | 'axis'
+            position: null,//默认值null，位置指定，传入{Array}，如[x, y]， 固定位置[x, y]；传入{Function}，如function([x, y]) {return [newX,newY]}，默认显示坐标为输入参数，用户指定的新坐标为输出返回。
+            formatter: '{a} < br/>{b} : {c}',//默认值null，内容格式器
+            //折线（区域）图、柱状（条形）图、K线图 : a（系列名称），b（类目值），c（数值）, d（无）
+            //散点图（气泡）图 : a（系列名称），b（数据名称），c（数值数组）, d（无）
+            //地图 : a（系列名称），b（区域名称），c（合并数值）, d（无）
+            //饼图、雷达图、仪表盘、漏斗图: a（系列名称），b（数据项名称），c（数值）, d（饼图：百分比 | 雷达图：指标名称）
+            islandFormatter: '{a} < br/>{b} : {c}',//默认值'{a} < br/>{b} : {c}'，拖拽重计算独有，数据孤岛内容格式器
+            showDelay: 20,//默认值20，显示延迟，添加显示延迟可以避免频繁切换，特别是在详情内容需要异步获取的场景，单位ms
+            hideDelay: 100,//默认值100，隐藏延迟，单位ms
+            transitionDuration: 0.4,//默认值0.4，动画变换时长，单位s，如果你希望tooltip的跟随实时响应，showDelay设置为0是关键，同时transitionDuration设0也会有交互体验上的差别。
+            enterable: false,//默认值false，鼠标是否可进入详情气泡中，默认为false，如需详情内交互，如添加链接，按钮，可设置为true。
+            backgroundColor: 'rgba(0,0,0,0.7)',//默认值，提示背景颜色，默认为透明度为0.7的黑色
+            borderColor: '#333',//默认值，提示边框颜色
+            borderRadius: 4,//默认值，提示边框圆角，单位px，默认为4
+            borderWidth: 0,//默认值，提示边框线宽，单位px，默认为0（无边框）
+            padding: 5,//默认值，提示内边距，单位px，默认各方向内边距为5，接受数组分别设定上右下左边距，同css
+            axisPointer: {//默认值，坐标轴指示器，默认type为line，可选为：'line' | 'cross' | 'shadow' | 'none'(无)，指定type后对应style生效，见下 
+            //lineStyle设置直线指示器（详见lineStyle）, 
+            //crossStyle设置十字准星指示器（详见lineStyle）, 
+            //shadowStyle设置阴影指示器（详见shadowStyle），areaStyle.size默认为'auto'自动计算，可指定具体宽度
+                type: 'none',//默认值，可选值：'line' | 'cross' | 'shadow' | 'none'(无)，指定type后对应style生效（如下）
+                lineStyle: {//默认值各异，
+                    color: 'rgba(0,0,0,0.7)',//默认值各异，颜色rgba
+                    type: 'solid',//默认值，
+                    width: 0,//默认值，
+                    shadowColor: 'rgba(0,0,0,0)',//默认值，折线主线(IE8+)有效，阴影色彩，支持rgba
+                    shadowBlur: 5,//默认值，折线主线(IE8+)有效，阴影模糊度，大于0有效
+                    shadowOffsetX: 3,//默认值，折线主线(IE8+)有效，阴影横向偏移，正值往右，负值往左
+                    shadowOffsetY: 3,//默认值，折线主线(IE8+)有效，阴影纵向偏移，正值往下，负值往上
+                },
+                crossStyle: {//默认值，
+                    color: 'rgba(0,0,0,0.7)',//默认值，
+                    type: 'solid',//默认值，
+                    width: 0,//默认值，
+                    shadowColor: 'rgba(0,0,0,0)',//默认值，
+                    shadowBlur: 5,//默认值，
+                    shadowOffsetX: 3,//默认值，
+                    shadowOffsetY: 3,//默认值，
+                },
+                shadowStyle: {//默认值，
+                    color: 'rgba(0,0,0,0.7)',//默认值，
+                    type: 'default',//默认值，
+                },
+                textStyle: {//默认值，
+                    fontFamily: 'Arial, Verdana, sans...',//默认值，
+                    fontSize: 12,//默认值，
+                    fontStyle: 'normal',//默认值，
+                    fontWeight: 'normal',//默认值，
+                },
+            },
+            textStyle: {//默认值，
+                color: 'rgba(0,0,0,0.7)',//默认值各异，
+                decoration: 'none',//默认值，
+                align: 'rgba(0,0,0,0.7)',//默认值，
+                baseline: 'rgba(0,0,0,0.7)',//默认值，
+                fontFamily: 'Arial, Verdana, sans...',//默认值，
+                fontSize: 12,//默认值，
+                fontStyle: 'normal',//默认值，样式，可选为：'normal' | 'italic' | 'oblique'
+                fontWeight: 'normal',//默认值，粗细，可选为：'normal' | 'bold' | 'bolder' | 'lighter' | 100 | 200 |... | 900
+            },
+        },
+
+
+
+        //图例，每个图表最多仅有一个图例
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: ['第一部分','第二部分','第三部分','第四部分']
+        },
+        // 系列列表,每个系列通过 type 决定自己的图表类型
+        series : [
+            {
+                name: '访问',
+                type: 'pie',
+                radius : '62%',
+                center: ['50%', '65%'],
+                minAngle:'15',
+                data:[
+                    {name:"第一部分",value:4},
+                    {name:"第二部分",value:7},
+                    {name:"第三部分",value:3},
+                    {name:"第四部分",value:1},
+                ],
+                itemStyle: {
+                    normal:{
+                        label:{
+                            show:true,
+                            formatter: "{b} :\n  {c} \n ({d}%)",
+                            position:"inner"
+                        }
+                    }
+                }
+            }
+        ],
+    };
+    myChart.setOption(option);// 为echarts对象加载数据
+</script>
+</body>
+</html>

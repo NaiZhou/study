@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>关系图</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<script>var beforeDate = new Date();</script>
+<script language="javascript" type="text/javascript" src="js/jQuery-1.7.1.js"></script>
+<script language="javascript" type="text/javascript" src="js/jQuery-easing.js"></script>
+
+<script src="js/echarts.min.js"></script>
+<script type="text/javascript"  src="js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<!-- 头部 -->
+<div id="head">
+  <!-- logo -->
+  <div id="logowraper" class="center">
+   
+  </div>
+  <div id="navwraper" class="center">
+    <!-- 导航 -->
+    <dl id="nav">
+      <dd class="curr"><a href="" title="">首页</a></dd>
+      <dd class=""><a href="" title="">标题1</a></dd>
+      <dd class=""><a href="" title="">标题2</a><b></b></dd>
+      <dd class=""><a href="" title="">标题3</a><b></b></dd>
+      <dd class=""><a href="" title="">标题4</a></dd>
+    </dl>
+    <!-- 菜单列表 name值对应导航索引 -->
+    <div id="navmenu">
+      <dl name="1">
+        <dd><a href="" class="linkscroll" title="项目1">项目1</a></dd>
+        <dd><a href="" class="linkscroll" title="项目2">项目2</a></dd>
+        
+        <dt></dt>
+      </dl>
+      <dl name="2">
+        <dd><a href="" class="linkscroll" title="项目1">项目1</a></dd>
+        <dd><a href="" class="linkscroll" title="项目2">项目2</a></dd>
+        
+        <dt></dt>
+      </dl>
+      <dl name="3">
+        <dd><a href="" class="linkscroll" title="项目1">项目1</a></dd>
+        <dd><a href="" class="linkscroll" title="项目2">项目2</a></dd>
+        
+        <dt></dt>
+      </dl>
+    </div>
+    <!-- 搜索 -->
+    <form id="search" method = "post" >
+      <input type="reset" value="" id="srchBtn" tips="清空" />
+      <input type="text" value="请输入搜索关键字" id="srchText" />
+      <input type="button" value="" id="srchSub" tips="搜索" onclick="find()">
+    </form>
+  </div>
+</div>
+</body>
+<script language="javascript" type="text/javascript" src="js/jQuery-jcContact.js"></script>
+<script language="javascript" type="text/javascript" src="js/c.js"></script>
+<div style="text-align:center;clear:both">
+	<div style="padding:20px;width:100%;height:100%;"> 
+
+               <div id="main" style="width: 1504px;height:1000px;">
+               </div>
+               <div id='main_1' style="position: relative;height:15px;width: 100%;color:black">节点关系提示区</div>
+      <script src="js/echart02.js" charset="utf-8"></script>
+      </div>
+      </div>
+</div>
+</html>
