@@ -32,7 +32,10 @@ public interface NodeRepository extends GraphRepository<Persons>{
 //	@Query("MATCH (n:Resident) RETURN n LIMIT 25")
 //	Iterable<Resident> findResident();
 	
-	@Query("Match (start:BasicInfo)-[n]-(end) return start,end,n Limit 20")
+	@Query("Match (start:BasicInfo)-[n]-(end) return start,end,n Limit 50")
 	Iterable<BasicInfo> findoneBasicInfo();
+	
+	@Query("match (n)-[r]-(end) where n.huzhuxingming={name}   return n,r,end")
+	Iterable<BasicInfo> findByName(@Param("name")String name);
 	
 }

@@ -12,6 +12,8 @@ import com.qdu.echarts.entities.relationships.HAS_IMAGE;
 
 
 public class GovHelpbean{
+	private Long id;
+	private String name;
 	private String xiangmumingcheng;
 	private String huzhu_id;
 	private String fuchinianfen;
@@ -19,14 +21,32 @@ public class GovHelpbean{
 	private String zijinzonge_yuan;
 	private String jiansheneirong;
 	private int category;
+	public int getCategory() {
+		return category;
+	}
 
 	
 
+	public Long getId() {
+		return id;
+	}
 
 
 
-	public int getCategory() {
-		return category;
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 
@@ -112,9 +132,11 @@ public class GovHelpbean{
 
 
 
-	public GovHelpbean(String xiangmumingcheng, String huzhu_id, String fuchinianfen, String xiangmuleibie,
+	public GovHelpbean(Long id ,String name,String xiangmumingcheng, String huzhu_id, String fuchinianfen, String xiangmuleibie,
 			String zijinzonge_yuan, String jiansheneirong,int category) {
 		super();
+		this.id = id;
+		this.name = name;
 		this.xiangmumingcheng = xiangmumingcheng;
 		this.huzhu_id = huzhu_id;
 		this.fuchinianfen = fuchinianfen;

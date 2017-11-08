@@ -124,6 +124,10 @@ public class getdata {
 	}
 	
 	public String indexdata() {
+		return this.BasicInfonode();
+	}
+	
+	public String BasicInfonode() {
 		List<BasicInfobean> basicInfo = new ArrayList<BasicInfobean>();
 		List<Familybean> familybean = new ArrayList<Familybean>();
 		List<GovHelpbean> govhelpbean = new ArrayList<GovHelpbean>();
@@ -144,7 +148,7 @@ public class getdata {
 		while(iter.hasNext()) {
 			basinfo = iter.next();
 			
-			basicInfo.add(new BasicInfobean(basinfo.getHuzhuxingming(),basinfo.getJiatingzhuzhi(), basinfo.getLianxidianhua(),
+			basicInfo.add(new BasicInfobean(basinfo.getId(),basinfo.getHuzhuxingming(),basinfo.getJiatingzhuzhi(), basinfo.getLianxidianhua(),
 					basinfo.getXiangguanjianjie(), basinfo.getZhufangmianji(), basinfo.getNonghushuxing(),
 					basinfo.getHuzhuxingming(), basinfo.getHuma(), basinfo.getRanliaoleixing(),
 					basinfo.getPinkunyuanyin(), basinfo.getJuanzengxuqiuzonge_yuan(), basinfo.getJiatingrenshu(),
@@ -156,15 +160,67 @@ public class getdata {
 			has_family = basinfo.getHas_family();
 			has_helpperson = basinfo.getHas_helpperson();
 			System.out.println("----------------------");
+//			try {
+//				for (HAS_HELPPERSON has : has_helpperson) {
+//					rs.add(new Rels(has.getStartnode().getHuzhuxingming(), has.getEndnode().getBangfurenxingming(),
+//							new String("帮扶人")));
+//					helpperson.add(new HelpPersonbean(
+//							has.getEndnode().getHuzhu_id(), has.getEndnode().getBangfukaishishijian(),
+//							has.getEndnode().getLianxidianhua(), has.getEndnode().getDanweilishuguanxi(),
+//							has.getEndnode().getBangfujieshushijian(), has.getEndnode().getBangfudanweimingcheng(),
+//							has.getEndnode().getBangfurenxingming(), has.getEndnode().getCatetory()));
+//				}
+//			} catch (NullPointerException e) {
+//				System.out.println("没有帮扶人关系");
+//			}
+//			
+//			try {
+//				for (HAS_FAMILY has : has_family) {
+//					rs.add(new Rels(has.getStartnode().getHuzhuxingming(), has.getEndnode().getXingming(),
+//							new String("家庭成员")));
+//					familybean.add(new Familybean( has.getEndnode().getXingming(),
+//							has.getEndnode().getWugongshijian(), has.getEndnode().getHuzhu_id(),
+//							has.getEndnode().getWenhuachengdu(), has.getEndnode().getYuhuzhuguanxi(),
+//							has.getEndnode().getXinxingnongcunhezuoyiliao(),
+//							has.getEndnode().getZaixiaoshengzhuangkuang(),
+//							has.getEndnode().getChengxiangjuminyanglaobaoxian(), has.getEndnode().getLaodongnengli(),
+//							has.getEndnode().getCanjizhenghaoma(), has.getEndnode().getCatetory()));
+//				}
+//			} catch (NullPointerException e) {
+//				System.out.println("没有家庭成员关系");
+//			}
+//			try {
+//				for (HAS_GOVHELP has : has_govhelp) {
+//					rs.add(new Rels(has.getStartnode().getHuzhuxingming(), has.getEndnode().getXiangmumingcheng(),
+//							new String("帮扶项目")));
+//					govhelpbean.add(new GovHelpbean(
+//							has.getEndnode().getXiangmumingcheng(), has.getEndnode().getHuzhu_id(),
+//							has.getEndnode().getFuchinianfen(), has.getEndnode().getXiangmuleibie(),
+//							has.getEndnode().getZijinzonge_yuan(), has.getEndnode().getJiansheneirong(),
+//							has.getEndnode().getCatetory()));
+//				}
+//			} catch (NullPointerException e) {
+//				System.out.println("没有帮扶项目关系");
+//			}
+//
+//			try {
+//				for (HAS_IMAGE has : has_image) {
+//					rs.add(new Rels(has.getStartnode().getHuzhuxingming(), has.getEndnode().getHuzhu_id(),
+//							new String("图片")));
+//					image.add(new Imagebean(has.getEndnode().getUrl()));
+//				}
+//			} catch (NullPointerException e) {
+//				System.out.println("没有图片关系");
+//			}
 			try {
 				for (HAS_HELPPERSON has : has_helpperson) {
-					rs.add(new Rels(has.getStartnode().getHuzhuxingming(), has.getEndnode().getBangfurenxingming(),
+					rs.add(new Rels(has.getStartnode().getId(), has.getEndnode().getId(),
 							new String("帮扶人")));
-					helpperson.add(new HelpPersonbean(
+					helpperson.add(new HelpPersonbean(has.getEndnode().getId(),has.getEndnode().getBangfurenxingming(),
 							has.getEndnode().getHuzhu_id(), has.getEndnode().getBangfukaishishijian(),
 							has.getEndnode().getLianxidianhua(), has.getEndnode().getDanweilishuguanxi(),
 							has.getEndnode().getBangfujieshushijian(), has.getEndnode().getBangfudanweimingcheng(),
-							has.getEndnode().getBangfurenxingming(), has.getEndnode().getCatetory()));
+							has.getEndnode().getBangfurenxingming(), 2));
 				}
 			} catch (NullPointerException e) {
 				System.out.println("没有帮扶人关系");
@@ -172,38 +228,39 @@ public class getdata {
 			
 			try {
 				for (HAS_FAMILY has : has_family) {
-					rs.add(new Rels(has.getStartnode().getHuzhuxingming(), has.getEndnode().getXingming(),
+					rs.add(new Rels(has.getStartnode().getId(), has.getEndnode().getId(),
 							new String("家庭成员")));
-					familybean.add(new Familybean( has.getEndnode().getXingming(),
+					familybean.add(new Familybean(has.getEndnode().getId(), has.getEndnode().getXingming(),has.getEndnode().getXingming(),
 							has.getEndnode().getWugongshijian(), has.getEndnode().getHuzhu_id(),
 							has.getEndnode().getWenhuachengdu(), has.getEndnode().getYuhuzhuguanxi(),
 							has.getEndnode().getXinxingnongcunhezuoyiliao(),
 							has.getEndnode().getZaixiaoshengzhuangkuang(),
 							has.getEndnode().getChengxiangjuminyanglaobaoxian(), has.getEndnode().getLaodongnengli(),
-							has.getEndnode().getCanjizhenghaoma(), has.getEndnode().getCatetory()));
+							has.getEndnode().getCanjizhenghaoma(),3));
 				}
 			} catch (NullPointerException e) {
 				System.out.println("没有家庭成员关系");
 			}
 			try {
 				for (HAS_GOVHELP has : has_govhelp) {
-					rs.add(new Rels(has.getStartnode().getHuzhuxingming(), has.getEndnode().getXiangmumingcheng(),
+					rs.add(new Rels(has.getStartnode().getId(), has.getEndnode().getId(),
 							new String("帮扶项目")));
-					govhelpbean.add(new GovHelpbean(
+					govhelpbean.add(new GovHelpbean(has.getEndnode().getId(),has.getEndnode().getXiangmumingcheng(),
 							has.getEndnode().getXiangmumingcheng(), has.getEndnode().getHuzhu_id(),
 							has.getEndnode().getFuchinianfen(), has.getEndnode().getXiangmuleibie(),
 							has.getEndnode().getZijinzonge_yuan(), has.getEndnode().getJiansheneirong(),
-							has.getEndnode().getCatetory()));
+							4));
 				}
 			} catch (NullPointerException e) {
 				System.out.println("没有帮扶项目关系");
 			}
-
+			
 			try {
+				int i = 1;
 				for (HAS_IMAGE has : has_image) {
-					rs.add(new Rels(has.getStartnode().getHuzhuxingming(), has.getEndnode().getHuzhu_id(),
+					rs.add(new Rels(has.getStartnode().getId(), has.getEndnode().getId(),
 							new String("图片")));
-					image.add(new Imagebean(has.getEndnode().getUrl()));
+					image.add(new Imagebean(has.getEndnode().getId(),"图片",has.getEndnode().getUrl(),5));
 				}
 			} catch (NullPointerException e) {
 				System.out.println("没有图片关系");
@@ -243,7 +300,7 @@ public class getdata {
 		relationship.append("]");
 		
 //		json = basicinfonode+"-"+familynode+"-"+govhelpnode+"-"+imagenode+"-"+helppersonnode+"-"+relationship;
-		json =basicinfonode.substring(0,basicinfonode.length()-1)+","+familynode.substring(1,familynode.length()-1)+","+govhelpnode.substring(1,govhelpnode.length()-1)+","+helppersonnode.substring(1,helppersonnode.length())+","+imagenode.substring(1)+"-"+relationship;
+		json =basicinfonode.substring(0,basicinfonode.length()-1)+","+familynode.substring(1,familynode.length()-1)+","+govhelpnode.substring(1,govhelpnode.length()-1)+","+helppersonnode.substring(1,helppersonnode.length()-1)+","+imagenode.substring(1)+"-"+relationship;
 		
 		return json;
 	}

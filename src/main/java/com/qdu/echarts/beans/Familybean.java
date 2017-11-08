@@ -12,8 +12,8 @@ import com.qdu.echarts.entities.relationships.HAS_IMAGE;
 
 
 public class Familybean{
-	
-
+	private Long id;
+	private String name;
 	private String xingming;
 	private String wugongshijian;
 	private String huzhu_id;
@@ -27,18 +27,26 @@ public class Familybean{
 	private  int category;	
 	
 	
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public int getCategory() {
 		return category;
 	}
 	public void setCategory(int category) {
 		this.category = category;
 	}
-	public String getName() {
-		return xingming;
-	}
-	public void setName(String name) {
-		this.xingming = name;
-	}
+
 	public String getXingming() {
 		return xingming;
 	}
@@ -102,10 +110,12 @@ public class Familybean{
 	}
 	
 	
-	public Familybean(String xingming, String wugongshijian, String huzhu_id, String wenhuachengdu,
+	public Familybean(Long id,String name,String xingming, String wugongshijian, String huzhu_id, String wenhuachengdu,
 			String yuhuzhuguanxi, String xinxingnongcunhezuoyiliao, String zaixiaoshengzhuangkuang,
 			String chengxiangjuminyanglaobaoxian, String laodongnengli, String canjizhenghaoma,int category) {
 		super();
+		this.id = id;
+		this.name = name;
 		this.xingming = xingming;
 		this.wugongshijian = wugongshijian;
 		this.huzhu_id = huzhu_id;

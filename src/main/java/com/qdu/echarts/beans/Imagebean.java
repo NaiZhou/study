@@ -14,10 +14,38 @@ import com.qdu.echarts.entities.relationships.HAS_IMAGE;
  * 数据包含name和info，不能写ID，ID属性echarts无法读取，无法通过ID连接节点关系
  */
 public class Imagebean {
-	
-	
+	private Long id;
+	private String name;
 	private String url;
 	private int category;	
+
+
+	public String getName() {
+		return name;
+	}
+
+
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
 
 
 	public int getCategory() {
@@ -55,8 +83,10 @@ public class Imagebean {
 
 
 
-	public Imagebean(String url, int category) {
+	public Imagebean(Long id ,String name,String url, int category) {
 		super();
+		this.id = id;
+		this.name = name;
 		this.url = url;
 		this.category = category;
 	}

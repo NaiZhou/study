@@ -43,7 +43,6 @@
                     		label:{
                     			show:true
                     		},
-                    		color:'purple',
                     		borderType : 'solid', //图形描边类型，默认为实线，支持 'solid'（实线）, 'dashed'(虚线), 'dotted'（点线）。
                             borderColor : 'rgba(204,0,255,0.4)', //设置图形边框颜色,透明度为0.4
                             borderWidth : 4, //图形的描边线宽。为 0 时无描边。
@@ -113,15 +112,153 @@
                     			formatter: "{c}"
                     		}
                     	},
-                    	data:[{"name":"汪明福","jiatingzhuzhi":"重庆市万州区太白街道办事处永宁村委会","lianxidianhua":"18623215398","xiangguanjianjie":"汪明福吴昌美夫妇居住万州区太白街道永宁村3组，老伴吴昌美不但常年生病而且还是残疾，生活不能自理，一家人的生活重担全靠一个60多岁的老人，汪明福夫妇育有一女嫁到邻村，女婿因得癌症，花费家里全部积蓄，借了很多外债，很难照顾父母一家。望各界好心人伸出援助之手帮助这对无依无靠的老人吧。","zhufangmianji":"60","nonghushuxing":"","zhufangjiegou":null,"huzhuxingming":"汪明福","huma":"5001010172010026","ranliaoleixing":"柴草","pinkunyuanyin":"因残","juanzengxuqiuzonge_yuan":"100000.00","jiatingrenshu":"2","jiatingnianrenjunshouru_yuan":"3629.80","shoujuanjine_yuan":"0.00","category":1},{"name":"万德福","jiatingzhuzhi":"重庆市万州区太白街道办事处永宁村委会","lianxidianhua":"13594820923","xiangguanjianjie":"万德福家住万州区太白街道永宁村4组，先前一直单身，后来与一位高龄已婚妇女非法生育一对双胞胎儿子，孩子一天天长大，负担重也没有一技之长，靠打零工维持生活，一家人住在一间土坯房内，生活十分艰难，特别是这对聪明可爱，成绩优秀，积极向上的孩子很让人同情。望各界成功人士伸出援助之手帮帮这对可怜的孩子吧。","zhufangmianji":"90","nonghushuxing":"","zhufangjiegou":null,"huzhuxingming":"万德福","huma":"5001010172010032","ranliaoleixing":"清洁能源","pinkunyuanyin":"因学","juanzengxuqiuzonge_yuan":"20000.00","jiatingrenshu":"3","jiatingnianrenjunshouru_yuan":"6008.18","shoujuanjine_yuan":"0.00","category":"1"},
-                    	{"name":"吴昌美","xingming":"吴昌美","wugongshijian":"无","huzhu_id":"1794","wenhuachengdu":"小学","yuhuzhuguanxi":"配偶","xinxingnongcunhezuoyiliao":"无","zaixiaoshengzhuangkuang":"非在校生","chengxiangjuminyanglaobaoxian":"无","laodongnengli":"丧失劳动力","canjizhenghaoma":"51222319550724004743","category":2},{"name":"万兵","xingming":"万兵","wugongshijian":"无","huzhu_id":"1795","wenhuachengdu":"小学","yuhuzhuguanxi":"之子","xinxingnongcunhezuoyiliao":"无","zaixiaoshengzhuangkuang":"小学","chengxiangjuminyanglaobaoxian":"无","laodongnengli":"无劳动力","canjizhenghaoma":"无","category":2},{"name":"万军","xingming":"万军","wugongshijian":"无","huzhu_id":"1795","wenhuachengdu":"小学","yuhuzhuguanxi":"之子","xinxingnongcunhezuoyiliao":"无","zaixiaoshengzhuangkuang":"小学","chengxiangjuminyanglaobaoxian":"无","laodongnengli":"无劳动力","canjizhenghaoma":"无","category":2}        
-                    	,{"name":"慰问金","xiangmumingcheng":"慰问金","huzhu_id":"1794","fuchinianfen":"2014","xiangmuleibie":"制造业 ","zijinzonge_yuan":"0.00","jiansheneirong":"节日慰问金","category":3},{"name":"D级危房改造","xiangmumingcheng":"D级危房改造","huzhu_id":"1794","fuchinianfen":"2015","xiangmuleibie":"服务业 ","zijinzonge_yuan":"38000.00","jiansheneirong":"一楼一底","category":3},{"name":"低保兜底","xiangmumingcheng":"低保兜底","huzhu_id":"1794","fuchinianfen":"2015","xiangmuleibie":"制造业 ","zijinzonge_yuan":"4080.00","jiansheneirong":"农村低保标准2人","category":3},{"name":"D级危房改造","xiangmumingcheng":"D级危房改造","huzhu_id":"1795","fuchinianfen":"2015","xiangmuleibie":"服务业 ","zijinzonge_yuan":"31000.00","jiansheneirong":"d级危房改造90平米","category":3},{"name":"慰问金","xiangmumingcheng":"慰问金","huzhu_id":"1795","fuchinianfen":"2014","xiangmuleibie":"制造业 ","zijinzonge_yuan":"0.00","jiansheneirong":"节日慰问金","category":3},{"name":"扶贫日慰问","xiangmumingcheng":"扶贫日慰问","huzhu_id":"1795","fuchinianfen":"2014","xiangmuleibie":" ","zijinzonge_yuan":"0.00","jiansheneirong":"扶贫日慰问","category":3},{"name":"助学","xiangmumingcheng":"助学","huzhu_id":"1795","fuchinianfen":"2015","xiangmuleibie":"制造业 ","zijinzonge_yuan":"1580.00","jiansheneirong":"其他","category":3},{"name":"D保兜底","xiangmumingcheng":"D保兜底","huzhu_id":"1795","fuchinianfen":"2015","xiangmuleibie":"制造业 ","zijinzonge_yuan":"4680.00","jiansheneirong":"按农村低保标准托底","category":3}
-,{"name":"太白街道","huzhu_id":"1794","bangfukaishishijian":"2015/7/1","lianxidianhua":"58291208","danweilishuguanxi":"","bangfujieshushijian":"0000/0/0","bangfudanweimingcheng":"太白街道","bangfurenxingming":"何卫平","category":4},{"name":"太白街道","huzhu_id":"1794","bangfukaishishijian":"2014/1/1","lianxidianhua":"58290419","danweilishuguanxi":"","bangfujieshushijian":"2015/6/30","bangfudanweimingcheng":"太白街道","bangfurenxingming":"晏玉国","category":4}
-,{"url":"http://cx.cqfp.gov.cn/huphoto/wz/0EA4F4B71376F597E050320AB200BB1C.jpg","category":0},{"url":"http://cx.cqfp.gov.cn/huphoto/wz/0EA4D39A0ECF9201E050320AB200BAE9.jpg","category":0},{"url":"http://cx.cqfp.gov.cn/huphoto/wz/0D0FFBD4CFFB74FFE050320AB200EF92.jpg","category":0},{"url":"http://cx.cqfp.gov.cn/huphoto/wz/0EA4F4B71377F597E050320AB200BB1C.jpg","category":0},{"url":"http://cx.cqfp.gov.cn/huphoto/wz/0EA46B97A72AB55AE050320AB200BA0A.jpg","category":0},{"url":"http://cx.cqfp.gov.cn/huphoto/wz/0EA3FEC7D7D17FEEE050320AB200B92A.jpg","category":0},{"url":"http://cx.cqfp.gov.cn/huphoto/wz/0EA34D2647132A59E050320AB200B773.jpg","category":0}],
-
-                        
+                    	data:[ {
+                            id : 0,
+                            category : 0,
+                            name : '101.133.8.88',
+                            symbol : 'roundRect',
+                            value : 20,
+                            symbolSize : 80,
+                        }, {
+                            id : 1,
+                            category : 1,
+                            name : '192.168.8.88',
+                            symbol : 'rect',
+                            value : 20,
+                            symbolSize : 70
+                        }, {
+                            id : 2,
+                            category : 2,
+                            name : '7001',
+                            symbol : 'circle',
+                            value : 20,
+                            symbolSize : 60,
+                            yId:"jvm",
+                            host:"192.168.6.37",
+                            port:"7001",
+                            username:"weblogic",
+                            pwd:"weblogic1"
+                        }, {
+                            id : 3,
+                            category : 2,
+                            name : '7100',
+                            symbol : 'circle',
+                            value : 20,
+                            symbolSize : 60
+                        }, {
+                            id : 4,
+                            category : 1,
+                            name : '102.12.33.23',
+                            symbol : 'rect',
+                            value : 20,
+                            symbolSize : 70
+                        }, {
+                            id : 5,
+                            category : 2,
+                            name : '7001',
+                            symbol : 'circle',
+                            value : 20,
+                            symbolSize : 60
+                        }, {
+                            id : 6,
+                            category : 2,
+                            name : '7100',
+                            symbol : 'circle',
+                            value : 20,
+                            symbolSize : 60
+                        }, {
+                            id : 7,
+                            category : 2,
+                            name : '7001',
+                            symbol : 'circle',
+                            value : 20,
+                            symbolSize : 60
+                        }, {
+                            id : 8,
+                            category : 1,
+                            name : '101.11.66.6',
+                            symbol : 'rect',
+                            value : 20,
+                            symbolSize : 70
+                        }, {
+                            id : 9,
+                            category : 2,
+                            name : '7101',
+                            symbol : 'circle',
+                            value : 20,
+                            symbolSize : 60
+                        }, {
+                            id : 10,
+                            category : 2,
+                            name : '7101',
+                            symbol : 'circle',
+                            value : 20,
+                            symbolSize : 60
+                        }, {
+                            id : 11,
+                            category : 2,
+                            name : '7001',
+                            symbol : 'circle',
+                            value : 20,
+                            symbolSize : 60
+                        }, {
+                            id : 12,
+                            category : 2,
+                            name : '7100',
+                            symbol : 'circle',
+                            value : 20,
+                            symbolSize : 60
+                        }, {
+                            id : 13,
+                            category : 3,
+                            name : '192.168.44.44',
+                            symbol : 'circle',
+                            value : 20,
+                            symbolSize : 70
+                        }, {
+                            id : 14,
+                            category : 3,
+                            name : '192.168.33.33',
+                            symbol : 'circle',
+                            value : 20,
+                            symbolSize : 70
+                        }, {
+                            id : 15,
+                            category : 3,
+                            name : '192.168.22.22',
+                            symbol : 'circle',
+                            value : 20,
+                            symbolSize : 70
+                        }, {
+                            id : 16,
+                            category : 4,
+                            name : '55555555555',
+                            symbol : 'circle',
+                            value : 20,
+                            symbolSize : 70,
+                            yId:"jdbc",
+                            port:"1521",
+                            host:"192.168.11.11",
+                            username:"222222222",
+                            pwd:"11111111",
+                            instance:"orcl"
+                        }],
+                    	
                     	links:[]
-                       
+                    	,categories : [ //symbol name：用于和 legend 对应以及格式化 tooltip 的内容。 label有效
+                            {
+                                symbol : 'rect',
+                                label : { //标签样式
+                                }
+                            }, {
+                                symbol : 'rect'
+                            }, {
+                                symbol : 'roundRect'
+                            }, {
+                                symbol : 'roundRect'
+                            }, {
+                                symbol : 'roundRect'
+                            } ],
                     	
                     	}
                     	

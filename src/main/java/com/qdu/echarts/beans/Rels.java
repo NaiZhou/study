@@ -6,19 +6,19 @@ package com.qdu.echarts.beans;
  */
 public class Rels {
 
-	private String source;
-	private String target;
+	private Long source;
+	private Long target;
 	private String value;
-	public String getSource() {
+	public Long getSource() {
 		return source;
 	}
-	public void setSource(String source) {
+	public void setSource(Long source) {
 		this.source = source;
 	}
-	public String getTarget() {
+	public Long getTarget() {
 		return target;
 	}
-	public void setTarget(String target) {
+	public void setTarget(Long target) {
 		this.target = target;
 	}
 	public String getValue() {
@@ -27,7 +27,7 @@ public class Rels {
 	public void setValue(String value) {
 		this.value = value;
 	}
-	public Rels(String source, String target, String value) {
+	public Rels(Long source, Long target, String value) {
 		super();
 		this.source = source;
 		this.target = target;

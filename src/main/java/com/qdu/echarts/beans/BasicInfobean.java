@@ -12,7 +12,7 @@ import com.qdu.echarts.entities.relationships.HAS_IMAGE;
 
 
 public class BasicInfobean  {
-	
+	private Long id;
 	private String name;
 	private String jiatingzhuzhi;
 	private String lianxidianhua;
@@ -32,6 +32,13 @@ public class BasicInfobean  {
 	
 	
 
+
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getName() {
 		return name;
 	}
@@ -131,11 +138,12 @@ public class BasicInfobean  {
 	
 	
 	
-	public BasicInfobean(String name,String jiatingzhuzhi, String lianxidianhua, String xiangguanjianjie, String zhufangmianji,
+	public BasicInfobean(Long id,String name,String jiatingzhuzhi, String lianxidianhua, String xiangguanjianjie, String zhufangmianji,
 			String nonghushuxing, String huzhuxingming, String huma, String ranliaoleixing, String pinkunyuanyin,
 			String juanzengxuqiuzonge_yuan, String jiatingrenshu, String jiatingnianrenjunshouru_yuan,
 			String shoujuanjine_yuan,int category) {
 		super();
+		this.id = id;
 		this.name=name;
 		this.jiatingzhuzhi = jiatingzhuzhi;
 		this.lianxidianhua = lianxidianhua;
