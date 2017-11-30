@@ -20,6 +20,13 @@
     	<servlet-class>com.qdu.echarts.servelet.EchatsServlet2</servlet-class>
     	<load-on-startup>0</load-on-startup>
     </servlet>
+    <servlet>
+    	<servlet-name>EchatsServlet3</servlet-name>
+    	<display-name>EchatsServlet3</display-name>
+    	<description></description>
+    	<servlet-class>com.qdu.echarts.servelet.EchatsServlet3</servlet-class>
+    	<load-on-startup>0</load-on-startup>
+    </servlet>
     <servlet-mapping>
         <servlet-name>EchatsServlet</servlet-name>
         <url-pattern>/EchatsServlet</url-pattern>
@@ -27,6 +34,10 @@
      <servlet-mapping>
         <servlet-name>EchatsServlet2</servlet-name>
         <url-pattern>/EchatsServlet2</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>EchatsServlet3</servlet-name>
+        <url-pattern>/EchatsServlet3</url-pattern>
     </servlet-mapping>
  
 </web-app>

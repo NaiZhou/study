@@ -22,7 +22,7 @@ public class GraphDBConfiguration extends Neo4jConfiguration {
 	       org.neo4j.ogm.config.Configuration config = new org.neo4j.ogm.config.Configuration();
 	       config.driverConfiguration()
 	               .setDriverClassName("org.neo4j.ogm.drivers.http.driver.HttpDriver")
-	               .setURI("http://neo4j:genaizhou1996@localhost:7474");
+	               .setURI("http://neo4j:root@localhost:7474");
 	       return config;
 	   }
 

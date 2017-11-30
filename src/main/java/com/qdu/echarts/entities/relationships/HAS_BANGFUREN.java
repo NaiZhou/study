@@ -5,6 +5,7 @@ import org.neo4j.ogm.annotation.RelationshipEntity;
 import org.neo4j.ogm.annotation.StartNode;
 
 import com.qdu.echarts.entities.base.AbstractEntity;
+import com.qdu.echarts.entities.base.BangFuRen;
 import com.qdu.echarts.entities.base.BasicInfo;
 import com.qdu.echarts.entities.base.GovHelp;
 import com.qdu.echarts.entities.base.HelpPerson;
@@ -15,41 +16,57 @@ import com.qdu.echarts.entities.base.Family;
  * 数据库中关系类型为rel，name属性为关系名称。
  *
  */
-@RelationshipEntity(type = "HAS_HELPPERSON")
-public class HAS_HELPPERSON extends AbstractEntity {
+@RelationshipEntity(type = "HAS_BANGFUREN")
+public class HAS_BANGFUREN extends AbstractEntity {
 
 	@StartNode
-	private BasicInfo startnode;
+	private BangFuRen startnode;
 
 	@EndNode
-	private HelpPerson endnode;
+	private BasicInfo endnode;
 
-	
+	private String bangfukaishishijian;
 	
 
-	public BasicInfo getStartnode() {
+
+
+	public BangFuRen getStartnode() {
 		return startnode;
 	}
 
 
 
 
-	public void setStartnode(BasicInfo startnode) {
+	public void setStartnode(BangFuRen startnode) {
 		this.startnode = startnode;
 	}
 
 
 
 
-	public HelpPerson getEndnode() {
+	public BasicInfo getEndnode() {
 		return endnode;
 	}
 
 
 
 
-	public void setEndnode(HelpPerson endnode) {
+	public void setEndnode(BasicInfo endnode) {
 		this.endnode = endnode;
+	}
+
+
+
+
+	public String getBangfukaishishijian() {
+		return bangfukaishishijian;
+	}
+
+
+
+
+	public void setBangfukaishishijian(String bangfukaishishijian) {
+		this.bangfukaishishijian = bangfukaishishijian;
 	}
 
 
@@ -57,9 +74,13 @@ public class HAS_HELPPERSON extends AbstractEntity {
 
 	@Override
 	public String toString() {
-		return "HELPED_BY [startperson=" + startnode.getHuzhuxingming() + ", endperson=" + endnode.getBangfudanweimingcheng() + "]";
+		return "HAS_BANGFUREN [startnode=" + startnode + ", endnode=" + endnode + "]";
 	}
-	
+
+
+
+
+ 
 	
 
 }

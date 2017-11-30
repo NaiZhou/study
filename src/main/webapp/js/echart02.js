@@ -66,7 +66,7 @@
                 yAxisIndex : 0, //y轴坐标 
                 force : { //力引导图基本配置
                     //initLayout: ,//力引导的初始化布局，默认使用xy轴的标点
-                    repulsion : 30,//节点之间的斥力因子。支持数组表达斥力范围，值越大斥力越大。
+                    repulsion :10,//节点之间的斥力因子。支持数组表达斥力范围，值越大斥力越大。
                     gravity : 0.012,//节点受到的向中心的引力因子。该值越大节点越往中心点靠拢。
                     edgeLength :100,//边的两个节点之间的距离，这个距离也会受 repulsion。[10, 50] 。值越小则长度越长
                     layoutAnimation : true,
@@ -430,13 +430,13 @@
             	 return str;
              }
              if(category==2){
-            	 var str = "姓名:"+params.data.name+'<br/>'+
-            	 "联系电话:"+params.data.lianxidianhua+'<br/>'+
-            	 "单位关系:"+params.data.danweilishuguanxi+'<br/>'+
-            	 "帮扶开始时间:"+params.data.bangfukaishishijian+'<br/>'+
-            	 "帮扶结束时间:"+params.data.bangfujieshushijian+'<br/>'+
-            	 "帮扶单位名称:"+params.data.bangfudanweimingcheng;
-            	 return str;
+//            	 var str = "姓名:"+params.data.name+'<br/>'+
+//            	 "联系电话:"+params.data.lianxidianhua+'<br/>'+
+//            	 "单位关系:"+params.data.danweilishuguanxi+'<br/>'+
+//            	 "帮扶开始时间:"+params.data.bangfukaishishijian+'<br/>'+
+//            	 "帮扶结束时间:"+params.data.bangfujieshushijian+'<br/>'+
+//            	 "帮扶单位名称:"+params.data.bangfudanweimingcheng;
+//            	 return str;
             	
              }
              if(category==3){
@@ -448,12 +448,12 @@
             	 return str;
              }
              if(category==4){
-            	 var str = "项目名称:"+params.data.name+'<br/>'+
-            	 "扶持年份:"+params.data.fuchinianfen+'<br/>'+
-            	 "项目类别:"+params.data.xiangmuleibie+'<br/>'+
-            	 "资金总额:"+params.data.zijinzonge_yuan+'<br/>'+
-            	 "建设内容:"+params.data.jiansheneirong;
-            	 return str;
+//            	 var str = "项目名称:"+params.data.name+'<br/>'+
+//            	 "扶持年份:"+params.data.fuchinianfen+'<br/>'+
+//            	 "项目类别:"+params.data.xiangmuleibie+'<br/>'+
+//            	 "资金总额:"+params.data.zijinzonge_yuan+'<br/>'+
+//            	 "建设内容:"+params.data.jiansheneirong;
+//            	 return str;
              }
              if(category==5){
             	 var str = "链接:"+params.data.url;

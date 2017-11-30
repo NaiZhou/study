@@ -9,6 +9,7 @@ import com.qdu.echarts.entities.base.Persons;
 import com.qdu.echarts.entities.base.BasicInfo;
 import com.qdu.echarts.entities.base.Family;
 import com.qdu.echarts.entities.base.GovHelp;
+import com.qdu.echarts.entities.base.HelpPerson;
 
 /**
  * 
@@ -29,6 +30,9 @@ public interface NodeRepository extends GraphRepository<Persons>{
 //	@Query("MATCH (a:Persons { name:{startname} }),(b:Person { name:{endname} }), p = shortestPath((a)-[*..15]-(b)) RETURN p")
 //	Iterable<Persons> findRelByName(@Param("startname")String startname,@Param("endname")String endname);
 	
+	@Query("MATCH (a) where a.bangfurenxingming={startname} or a.huzhuxingming={startname} or a.xingming={startname}  match (b) where b.bangfurenxingming={endname} or b.huzhuxingming={endname} or b.xingming={endname} match p = shortestPath((a)-[*..15]-(b)) return p")
+	Iterable<Object> findRelByName(@Param("startname")String startname,@Param("endname")String endname);
+	
 //	@Query("MATCH (n:Resident) RETURN n LIMIT 25")
 //	Iterable<Resident> findResident();
 	
@@ -37,5 +41,24 @@ public interface NodeRepository extends GraphRepository<Persons>{
 	
 	@Query("match (n)-[r]-(end) where n.huzhuxingming={name}   return n,r,end")
 	Iterable<BasicInfo> findByName(@Param("name")String name);
+	
+	@Query("match (n:BasicInfo)-[r]-(p) where n.huzhuxingming={name} return n,r,p")
+	Iterable<BasicInfo> findBasicInfoByName(@Param("name")String name);
+	
+	@Query("match (n:Family)-[r*1..2]-(p) where n.xingming={name} return n,r,p")
+	Iterable<BasicInfo> findFamilyByName(@Param("name")String name);
+	
+	@Query("match (n:BangFuRen)-[r*1..2]-(p) where n.bangfurenxingming={name} return n,r,p")
+	Iterable<BasicInfo> findBangFuRenByName(@Param("name")String name);
+	
+	@Query("match(n) where n.bangfurenxingming={name} or n.huzhuxingming={name} or n.xingming={name} match (n)-[r*1..1]-(p) return n,r,p")
+	Iterable<Object> findName(@Param("name")String name);
+	
+	@Query("MATCH (n:Family) RETURN n LIMIT 25")
+	Iterable<Family> test();
+	
+
+	
+	
 	
 }

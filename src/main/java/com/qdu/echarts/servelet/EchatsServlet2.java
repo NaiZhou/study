@@ -28,6 +28,7 @@ import com.qdu.echarts.entities.base.Family;
 import com.qdu.echarts.entities.relationships.HAS_FAMILY;
 import com.qdu.echarts.repositories.NodeRepository;
 import com.qdu.echarts.service.getSearchData;
+import com.qdu.echarts.service.getSearchRel;
 import com.qdu.echarts.service.getdata;
 
 /**
@@ -62,31 +63,15 @@ public class EchatsServlet2 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String []name = {};
-		name = request.getParameter("name").split(" ");		
-		for(int i =0;i<name.length;i++) {
-			System.out.println(name[i]);
-		}
-		
-		 ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath*:/spring/dal-neo4j-context.xml");
-		 getSearchData a = (getSearchData) applicationContext.getBean("getSearchData");
-		 String result = new String();
-		 if(name.length==1) {
-			 result = a.getdata(name[0]);
-			 response.setContentType("text/html; charset=utf-8");
-		        response.getWriter().write(result);  }
-		 if(name.length==2) {
-				 result = a.getdata(name[0]);
-				 response.setContentType("text/html; charset=utf-8");
-			        response.getWriter().write(result); 
-			 }
-		
-		//		 ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath*:/spring/dal-neo4j-context.xml");
-//		 getdata a = (getdata) applicationContext.getBean("getdata");
-//		 String result = new String();
-//		 result = a.getrel();
-//		 response.setContentType("text/html; charset=utf-8");
-//	        response.getWriter().write(result);  
+		String name = new String();
+		name = request.getParameter("endnode");
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath*:/spring/dal-neo4j-context.xml");
+		getSearchData a = (getSearchData) applicationContext.getBean("getSearchData");
+		String result = new String();
+		result =a.getdata(name);
+		System.out.println(result);
+		request.getSession().setAttribute("result", result);
+		request.getRequestDispatcher("result.jsp").forward(request,response);
 	}
 
 }
