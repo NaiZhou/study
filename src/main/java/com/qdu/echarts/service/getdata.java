@@ -35,7 +35,9 @@ import com.qdu.echarts.repositories.NodeRepository;
 @Component
 @Transactional
 public class getdata {
-
+	public static void main(String[] args) {
+		
+	}
 	@Autowired
 	private NodeRepository nodeRepository;
 
@@ -47,7 +49,7 @@ public class getdata {
 		//
 		// Persons per = new Persons();
 		//// System.out.println(personsRepository.findAll());
-		// Iterable<Persons> pers = personsRepository.findAll();//»ñÈ¡Êý¾Ý¿âÈ«²¿Êý¾Ý£¬»ñµÃPersons
+		// Iterable<Persons> pers = personsRepository.findAll();//ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ý¿ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½Persons
 		// Iterator iter = pers.iterator();
 		// while (iter.hasNext()) {
 		// Object s = iter.next();
@@ -55,12 +57,12 @@ public class getdata {
 		// per = (Persons) s;
 		//// Resident pers1= new
 		// Resident(per.getName(),per.getInfo(),per.getTel(),per.getAdd(),per.getRemark(),per.getDate());
-		// ps.add(pers1);//´æÈëlist
+		// ps.add(pers1);//ï¿½ï¿½ï¿½ï¿½list
 		//// System.out.println(per.getName());
 		//// System.out.println(per.getInfo());
-		// Method m2 = s.getClass().getMethod("getRel");//Í¨¹ý·´ÉäÊ¹ÓÃgetRel·½·¨
+		// Method m2 = s.getClass().getMethod("getRel");//Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½getRelï¿½ï¿½ï¿½ï¿½
 		// Set a = (Set) m2.invoke(s);
-		// for (Object object : a) { //Ê¹ÓÃÑ­»·½«¹ØÏµÊý¾Ý´æÈëlistÖÐ
+		// for (Object object : a) { //Ê¹ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½listï¿½ï¿½
 		// HELPED_BY r = new HELPED_BY();
 		// r = (HELPED_BY) object;
 		//// Rels rels1 = new
@@ -75,7 +77,7 @@ public class getdata {
 		// // TODO Auto-generated catch block
 		// e.printStackTrace();
 		// } catch (NullPointerException e) {
-		// System.out.println("Ã»ÓÐ¹ØÏµ");
+		// System.out.println("Ã»ï¿½Ð¹ï¿½Ïµ");
 		// }catch (IllegalAccessException e) {
 		// // TODO Auto-generated catch block
 		// e.printStackTrace();
@@ -89,7 +91,7 @@ public class getdata {
 		//
 		// }
 		// String json = new String();
-		// ObjectMapper mapper = new ObjectMapper(); //Ìá¹©java-jsonÏà»¥×ª»»¹¦ÄÜµÄÀà
+		// ObjectMapper mapper = new ObjectMapper(); //ï¿½á¹©java-jsonï¿½à»¥×ªï¿½ï¿½ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½
 		// String persons=new String();
 		// try {
 		// persons = mapper.writeValueAsString(ps);
@@ -97,13 +99,13 @@ public class getdata {
 		// } catch (JsonProcessingException e) {
 		// // TODO Auto-generated catch block
 		// e.printStackTrace();
-		// } //½«listÖÐµÄ¶ÔÏó×ª»»ÎªJson¸ñÊ½µÄÊý×é
+		// } //ï¿½ï¿½listï¿½ÐµÄ¶ï¿½ï¿½ï¿½×ªï¿½ï¿½ÎªJsonï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		//
 		//
 		// System.out.println(persons);
 		// System.out.println();
 		//
-		// //½«¹ØÏµÊý¾Ý×ª»»ÎªjsonÊý¾Ý£¬Ê¹ÓÃStringBufferÌá¸ßÐ§ÂÊ¡£²¢ÔÚjson¸ñÊ½Ç°¼Ó'-'ÒÔ±ãajax»ñÈ¡×Ö·û´®ºó·Ö¿ªÎªÁ½×éjson
+		// //ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Îªjsonï¿½ï¿½ï¿½Ý£ï¿½Ê¹ï¿½ï¿½StringBufferï¿½ï¿½ï¿½Ð§ï¿½Ê¡ï¿½ï¿½ï¿½ï¿½ï¿½jsonï¿½ï¿½Ê½Ç°ï¿½ï¿½'-'ï¿½Ô±ï¿½ajaxï¿½ï¿½È¡ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Ö¿ï¿½Îªï¿½ï¿½ï¿½ï¿½json
 		// StringBuffer relationship=new StringBuffer("-[");
 		// for (Object object : rs) {
 		// Rels r = new Rels();
@@ -118,7 +120,7 @@ public class getdata {
 		// System.out.println(relationship);
 		//
 		//
-		// //ajaxÖ»·µ»ØÒ»¸ö×Ö·û´®£¬ÐèÒªÔÚjsÎÄ¼þÖÐ½«Á½¸öÊý¾Ý·Ö¿ª£¬Í¨¹ý¡°-¡±·ÖÀëÎªpersonºÍrelationshipÊý¾Ý
+		// //ajaxÖ»ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½jsï¿½Ä¼ï¿½ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý·Ö¿ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªpersonï¿½ï¿½relationshipï¿½ï¿½ï¿½ï¿½
 		// json = persons + relationship;
 		//// String[] sArray=json.split("-");
 		//// System.out.println(sArray[0]);
@@ -164,12 +166,12 @@ public class getdata {
 			try {
 				for (HAS_BANGFUREN has : has_bangfuren) {
 					rs.add(new RelsBangFuRen(has.getStartnode().getId(), has.getEndnode().getId(),
-							new String("°ï·öÈË"),has.getBangfukaishishijian()));
+							new String("ï¿½ï¿½ï¿½ï¿½ï¿½"),has.getBangfukaishishijian()));
 					bangfuren.add(new BangFuRenBean(has.getStartnode().getId(),has.getStartnode().getBangfurenxingming(),
 							has.getStartnode().getBangfurenxingming(), 2));
 				}
 			} catch (NullPointerException e) {
-				System.out.println("Ã»ÓÐ°ï·öÈË¹ØÏµ");
+				System.out.println("Ã»ï¿½Ð°ï¿½ï¿½ï¿½Ë¹ï¿½Ïµ");
 			}
 			
 			try {
@@ -185,16 +187,16 @@ public class getdata {
 							has.getEndnode().getCanjizhenghaoma(),3));
 				}
 			} catch (NullPointerException e) {
-				System.out.println("Ã»ÓÐ¼ÒÍ¥³ÉÔ±¹ØÏµ");
+				System.out.println("Ã»ï¿½Ð¼ï¿½Í¥ï¿½ï¿½Ô±ï¿½ï¿½Ïµ");
 			}
 			try {
 				for (HAS_BANGFUXIANGMU has : has_bangfuxiangmu) {
 					rs.add(new RelsBangFuXiangMu(has.getStartnode().getId(), has.getEndnode().getId(),
-							new String("°ï·öÏîÄ¿"),has.getFuchinianfen(),has.getJiansheneirong()));
+							new String("ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿"),has.getFuchinianfen(),has.getJiansheneirong()));
 					bangfuxiangmu.add(new BangFuXiangMuBean(has.getStartnode().getId(),has.getStartnode().getXiangmumingcheng(),has.getStartnode().getXiangmumingcheng(),4));
 				}
 			} catch (NullPointerException e) {
-				System.out.println("Ã»ÓÐ°ï·öÏîÄ¿¹ØÏµ");
+				System.out.println("Ã»ï¿½Ð°ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Ïµ");
 			}
 			
 			try {
@@ -203,11 +205,11 @@ public class getdata {
 					image.add(new Imagebean(has.getEndnode().getId(),"Í¼Æ¬",has.getEndnode().getUrl(),5));
 				}
 			} catch (NullPointerException e) {
-				System.out.println("Ã»ÓÐÍ¼Æ¬¹ØÏµ");
+				System.out.println("Ã»ï¿½ï¿½Í¼Æ¬ï¿½ï¿½Ïµ");
 			}
 		}
 		String json = new String();
-		ObjectMapper mapper = new ObjectMapper(); // Ìá¹©java-jsonÏà»¥×ª»»¹¦ÄÜµÄÀà
+		ObjectMapper mapper = new ObjectMapper(); // ï¿½á¹©java-jsonï¿½à»¥×ªï¿½ï¿½ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½
 		String basicinfonode = new String();
 		String familynode = new String();
 		String bangfuxiangmunode = new String();
@@ -222,7 +224,7 @@ public class getdata {
 		} catch (JsonProcessingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} // ½«listÖÐµÄ¶ÔÏó×ª»»ÎªJson¸ñÊ½µÄÊý×é
+		} // ï¿½ï¿½listï¿½ÐµÄ¶ï¿½ï¿½ï¿½×ªï¿½ï¿½ÎªJsonï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //		System.out.println(basicinfonode);
 //		System.out.println(familynode);
 //		System.out.println(bangfuxiangmunode);
